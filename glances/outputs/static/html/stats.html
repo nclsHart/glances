@@ -1,6 +1,15 @@
 <div ng-show="!dataLoaded" class="container-fluid" id="loading-page">
-    <div class="glances-logo"></div>
-    <div class="loader">Loading...</div>
+    <div class="row">
+        <div class="glances-logo"></div>
+        <div class="loader">Loading...</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-8">
+            <p class="tips">
+                Press <code>{{ tips.key }}</code> will {{ tips.label }}
+            </p>
+        </div>
+    </div>
 </div>
 
 <div ng-show="help_screen" class="container-fluid" ng-include src="'help.html'"></div>

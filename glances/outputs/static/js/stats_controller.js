@@ -87,6 +87,14 @@ glancesApp.controller('statsController', function ($scope, $interval, $routePara
     $scope.init_refresh_time();
     GlancesStats.getHelp().then(function (help) {
         $scope.help = help;
+
+        var helps = _.shuffle(help);
+        var help = _.trim(_.first(helps));
+        help = help.split('  ');
+        $scope.tips = {
+            'key': help[0],
+            'label': help[1].toLowerCase()
+        };
     });
 
     var stop;
